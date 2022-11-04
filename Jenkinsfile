@@ -6,9 +6,7 @@ pipeline {
         echo 'Pulling...';
         git branch: 'master' ,
           url : 'https://github.com/ghofrane99/DevopsProjectBack.git' ;
-        echo 'La date est ' ;
-        date ;
-           
+     
       }
     }
     
