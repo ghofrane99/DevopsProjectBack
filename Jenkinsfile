@@ -9,13 +9,14 @@ pipeline {
      
       }
     }
-    stage("Build") {
-          sh "mvn compile"
+    stage('Build') {
+          sh 'mvn compile'
 }
-stage("Unit tests") {
-         sh "mvn test"
+stage('Unit tests') {
+         sh 'mvn test'
 }
   
     
   }
 }
+
