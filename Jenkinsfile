@@ -9,6 +9,15 @@ pipeline {
      
       }
     }
+    stage("Build") {
+steps {
+bat "mvn compile"
+}}
+stage("Unit tests") {
+steps {
+bat "mvn test"
+}}
+  
     
   }
 }
