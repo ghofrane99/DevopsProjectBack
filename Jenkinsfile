@@ -9,6 +9,14 @@ pipeline {
      
       }
     }
+           stage("git last push time"){
+            steps{
+              
+                  sh 'git log -1 --format=%cd '
+                
+                }
+                
+            }
     stage('Clean') {
       steps {
           sh 'mvn clean'
