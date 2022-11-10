@@ -20,9 +20,12 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategorieProduit implements Serializable {
 
-	/**
-	 * 
-	 */
+	public CategorieProduit(String codeCategorie, String libelleCategorie) {
+		super();
+		this.codeCategorie = codeCategorie;
+		this.libelleCategorie = libelleCategorie;
+		
+	}
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
