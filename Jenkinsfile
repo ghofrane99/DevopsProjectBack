@@ -10,7 +10,7 @@ pipeline {
            }
   
   }
-  stage ('MVN BUILD') {
+  /*stage ('MVN BUILD') {
       steps {
         sh 'mvn clean package'
         echo 'Build stage done'
@@ -44,7 +44,7 @@ pipeline {
         
       }
     }
-   /* stage('Build Docker'){
+    stage('Build Docker'){
             steps{
                 sh 'docker build -t oussemaaaa/cloudonomicsspring-app .'
             }
