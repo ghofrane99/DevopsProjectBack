@@ -4,8 +4,8 @@ pipeline {
     stage('git checkout') {
       steps {
         git branch : 'CategorieProduit',
-        url: 'https://github.com/ghofrane99/DevopsProjectBack.git',
-	 credentialsId: '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';
+        url: 'https://github.com/ghofrane99/DevopsProjectBack.git';
+	 
         
         echo 'checkout stage'
            }
