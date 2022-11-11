@@ -4,9 +4,9 @@ pipeline {
     stage('git checkout') {
       steps {
         git branch : 'SecteurActivite',
-        url: 'https://github.com/ghofrane99/DevopsProjectBack.git',
-     
-        
+        url: 'https://github.com/ghofrane99/DevopsProjectBack.git';
+	    
+	 
         echo 'checkout stage'
            }
   
@@ -31,7 +31,7 @@ pipeline {
       }
     }
     
-    stage ('STATIC TEST WITH SONAR') {
+     stage ('STATIC TEST WITH SONAR') {
        steps {
        withSonarQubeEnv('sonarqube-8.9.7-community') { 
                 sh 'mvn sonar:sonar'
@@ -66,23 +66,20 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }
+        }*/
     
     
     
     
     
-    */
+  }  
   }
-}
-  /*post {
+ /* post {
         always {
-
 	emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
 	
     }
- }
-*/
+ }*/
