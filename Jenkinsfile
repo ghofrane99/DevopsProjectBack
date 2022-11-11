@@ -4,7 +4,7 @@ pipeline {
     stage('git checkout') {
       steps {
         git branch : 'CategorieProduit',
-        url: 'https://github.com/ghofrane99/DevopsProjectBack.git',
+        url: 'https://github.com/ghofrane99/DevopsProjectBack.git';
         
         echo 'checkout stage'
            }
