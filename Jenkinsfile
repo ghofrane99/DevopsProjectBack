@@ -95,8 +95,6 @@ pipeline {
                 }
             }
         }
-
-    }
     /*stage('Build Docker'){
             steps{
                 sh 'docker build -t oussemaaaa/cloudonomicsspring-app .'
