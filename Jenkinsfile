@@ -34,7 +34,7 @@ pipeline {
     stage ('STATIC TEST WITH SONAR') {
        steps {
        withSonarQubeEnv('sonarqube-8.9.7-community') { 
-                sh 'mvn sonar:sonar'
+                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.1.23:9000 -Dsonar.login=7b41f2d88b4f512107a628d74252f22af1f1769d'
         }
       }
     }
