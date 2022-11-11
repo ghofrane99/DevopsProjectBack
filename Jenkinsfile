@@ -6,7 +6,7 @@ pipeline {
         echo 'Pulling...';
         git branch: 'master' ,
           url : 'https://github.com/ghofrane99/DevopsProjectBack.git' ;
-          credentialsId: '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', 
+          
      
       }
     }
