@@ -34,7 +34,8 @@ pipeline {
      stage ('STATIC TEST WITH SONAR') {
        steps {
        
-              mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=603647c67fb9c37bcb3e07a92c47862f706ccb89        }
+              sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=603647c67fb9c37bcb3e07a92c47862f706ccb89'        
+       }
       
     }
   
