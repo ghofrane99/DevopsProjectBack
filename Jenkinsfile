@@ -33,9 +33,9 @@ pipeline {
     
      stage ('STATIC TEST WITH SONAR') {
        steps {
-       withSonarQubeEnv('sonarqube-8.9.7-community') { 
-               mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=603647c67fb9c37bcb3e07a92c47862f706ccb89        }
-      }
+       
+              mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=603647c67fb9c37bcb3e07a92c47862f706ccb89        }
+      
     }
   
    stage ('NEXUS DEPLOY') {
