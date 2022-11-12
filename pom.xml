@@ -33,7 +33,7 @@
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 
-
+		
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -85,6 +85,11 @@
 				
 			</plugin>
 			
+			<plugin>
+        			<artifactId>maven-deploy-plugin</artifactId>
+       			 	<version>3.0.0</version>
+      			</plugin>
+
 		</plugins>
 	</build>
 	<distributionManagement>
