@@ -44,7 +44,7 @@ pipeline {
    }
     stage('Build Docker'){
             steps{
-                sh 'docker build -t projectdevops/projetdevops .'
+                sh 'docker build -t projetdevops .'
             }
         }
 		stage('Docker Login'){
