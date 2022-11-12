@@ -53,13 +53,19 @@ pipeline {
                 sh 'docker login -u mariemb -p 181JFT1453'
             }
         }
-		 stage('Docker Push'){
+	   stage('Docker ps'){
+            steps{
+			
+                sh 'docker ps -a'
+            }
+        }
+	/*	 stage('Docker Push'){
             steps{
 			
                 sh 'docker push projectdevops/projectdevops'
             }
         }
-	/*	stage('Start container') {
+		stage('Start container') {
              steps {
                 sh 'docker-compose up -d '
       }
