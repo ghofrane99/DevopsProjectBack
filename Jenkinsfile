@@ -41,7 +41,7 @@ pipeline {
   
    stage ('NEXUS DEPLOY') {
        steps {
-       sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:nexus123@172.10.0.140:8081/repository/ProjectDevops/'
+       sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:nexus@172.10.0.140:8081/repository/ProjectDevops/'
         
       }
     }
