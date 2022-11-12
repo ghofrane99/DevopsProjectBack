@@ -33,13 +33,13 @@ pipeline {
     
      stage ('STATIC TEST WITH SONAR') {
        steps {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.1.28:9000 -Dsonar.login=47608a0541100fb76d1506f99ade8076a5ad3d39'
+                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=47608a0541100fb76d1506f99ade8076a5ad3d39'
       }
     }
   
    stage("publish to nexus") {
 	   steps {
-                sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:admin123@192.168.1.28:8081/repository/ProjectDevOps/'
+                sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:admin123@172.10.0.140:8081/repository/ProjectDevOps/'
 	   }
    }
     stage('Build Docker'){
