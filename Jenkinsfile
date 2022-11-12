@@ -39,7 +39,7 @@ pipeline {
   
    stage("publish to nexus") {
 	   steps {
-                sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://192.168.1.28:8081/repository/ProjectDevOps/'
+                sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://192.168.1.28:8081/repository/maven-releases/'
 	   }
    }
     /*stage('Build Docker'){
