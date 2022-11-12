@@ -42,24 +42,24 @@ pipeline {
                 sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:admin123@192.168.1.28:8081/repository/ProjectDevOps/'
 	   }
    }
-    /*stage('Build Docker'){
+    stage('Build Docker'){
             steps{
-                sh 'docker build -t oussemaaaa/cloudonomicsspring-app .'
+                sh 'docker build -t projectdevops/projetdevops .'
             }
         }
 		stage('Docker Login'){
             steps{
 			
-                sh 'docker login -u oussemaaaa -p benjou1998'
+                sh 'docker login -u mariemb -p 181JFT1453'
             }
         }
 		 stage('Docker Push'){
             steps{
 			
-                sh 'docker push oussemaaaa/cloudonomicsspring-app'
+                sh 'docker push mariemb/projectdevops'
             }
         }
-		stage('Start container') {
+	/*	stage('Start container') {
              steps {
                 sh 'docker-compose up -d '
       }
