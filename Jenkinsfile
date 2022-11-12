@@ -56,7 +56,7 @@ pipeline {
 		 stage('Docker Push'){
             steps{
 			
-                sh 'docker push mariemb/projectdevops'
+                sh 'docker push projectdevops/projectdevops'
             }
         }
 	/*	stage('Start container') {
