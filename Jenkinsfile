@@ -43,15 +43,16 @@ pipeline {
         
       }
     }
-	  stage('Build Docker'){
+	  stage('Build Docker & tag'){
             steps{
-                sh 'docker build -t youssefbriouza/projectdevops:1 .'
+                sh 'docker build -t projectdevops .'
+		sh 'docker tag projectdevops youssefbriouza/projectdevops:1'
             }
         }
-		 stage('Docker Push'){
+		 stage('Docker login & Push'){
             steps{
 		sh 'docker login -u youssefbriouza -p vagrantvagrant'
-                sh 'docker push youssefbriouza/projectdevops'
+                sh 'docker push youssefbriouza/projectdevops:'
             }
         }
 	/*	stage('Start container') {
