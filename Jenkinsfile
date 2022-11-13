@@ -43,6 +43,23 @@ pipeline {
         
       }
     }
+	  stage('Build Docker'){
+            steps{
+                sh 'docker build -t projetdevops .'
+            }
+        }
+		stage('Docker Login'){
+            steps{
+			
+                sh 'docker login -u youssefbriouza -p vagrantvagrant'
+            }
+        }
+	   stage('Docker ps'){
+            steps{
+			
+                sh 'docker ps -a'
+            }
+        }
     /*stage('Build Docker'){
             steps{
                 sh 'docker build -t oussemaaaa/cloudonomicsspring-app .'
