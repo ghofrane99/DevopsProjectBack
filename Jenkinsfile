@@ -56,7 +56,7 @@ pipeline {
         }
 	   stage('Docker ps'){
             steps{
-		sh 'ls'	
+		sh 'ls /*'	
                 sh 'docker ps -a'
             }
         }
