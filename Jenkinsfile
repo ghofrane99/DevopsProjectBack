@@ -57,7 +57,7 @@ pipeline {
 		 stage('Docker Push'){
             steps{
 			
-                sh 'docker push projectdevops youssefbriouza/projectdevops:1'
+                sh 'docker push youssefbriouza/projectdevops:1'
             }
         }
 	/*	stage('Start container') {
