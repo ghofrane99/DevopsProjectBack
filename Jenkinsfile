@@ -46,7 +46,7 @@ pipeline {
 	  stage('Build Docker & tag'){
             steps{
                 sh 'docker build -t projectdevops .'
-		sh 'docker tag projectdevops youssefbriouza/projectdevops:1'
+		sh 'docker tag projectdevops youssefbriouza/projectdevops'
             }
         }
 		 stage('Docker login & Push'){
