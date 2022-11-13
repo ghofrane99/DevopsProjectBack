@@ -5,8 +5,8 @@ pipeline {
       steps {
         echo 'Pulling...';
         git branch: 'master' ,
-          url : 'https://github.com/ghofrane99/DevopsProjectBack.git' ,
-          
+          url : 'https://github.com/ghofrane99/DevopsProjectBack.git' ;
+          credentialsId : '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';
      
       }
     }
