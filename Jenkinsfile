@@ -48,15 +48,9 @@ pipeline {
                 sh 'docker build -t youssefbriouza/projectdevops:1 .'
             }
         }
-		stage('Docker Login'){
-            steps{
-			
-                sh 'docker login -u youssefbriouza -p vagrantvagrant'
-            }
-        } 
 		 stage('Docker Push'){
             steps{
-			
+		sh 'docker login -u youssefbriouza -p vagrantvagrant'
                 sh 'docker push youssefbriouza/projectdevops:1'
             }
         }
