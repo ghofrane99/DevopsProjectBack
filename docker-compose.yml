@@ -1,8 +1,12 @@
-version: "3.8"
+version: "3.3"
 
 services:
+  angular-app:
+    image: youssefbriouza/angularproject:latest
+    ports:
+      - 4200:4200
   mysqldb:
-    image: mysql:5.7
+    image: arm64v8/mysql
     restart: unless-stopped
     env_file: ./.env
     environment:
@@ -15,7 +19,8 @@ services:
   app:
     depends_on:
       - mysqldb
-    build: ./spring-app
+    image: youssefbriouza/projectdevops:latest
+    container_name: springboot-app
     restart: on-failure
     env_file: ./.env
     ports:
