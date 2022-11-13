@@ -5,7 +5,6 @@ pipeline {
       steps {
         git branch : 'Operateur',
         url: 'https://github.com/ghofrane99/DevopsProjectBack.git',
-     credentialsId: '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';
         
         echo 'checkout stage'
            }
