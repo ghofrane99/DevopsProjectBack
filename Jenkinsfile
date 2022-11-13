@@ -48,16 +48,16 @@ pipeline {
                 sh 'docker build -t youssefbriouza/projectdevops:1 .'
             }
         }
-		stage('Docker Login'){
+		/*stage('Docker Login'){
             steps{
 			
                 sh 'docker login -u youssefbriouza -p vagrantvagrant'
             }
-        } 
+        } */
 		 stage('Docker Push'){
             steps{
 			
-                sh 'docker push youssefbriouza/projectdevops:1'
+                sh 'docker push -u youssefbriouza -p vagrantvagrant youssefbriouza/projectdevops:1'
             }
         }
 	/*	stage('Start container') {
