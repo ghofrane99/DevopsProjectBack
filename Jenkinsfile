@@ -64,24 +64,41 @@ pipeline {
            }
   
   }
-		    stage ('ng test') {
+	stage ('ng test') {
       steps {
         sh 'ng test'
         echo 'test stage done'
       }
     }
-		     stage ('ng build') {
+	stage ('ng build') {
       steps {
         sh 'ng build'
         echo 'Build stage done'
       }
     }
-	/*	stage('Start container') {
+	stage ('Nexus DEPLOY') {
+       steps {
+        sh 'npm publish'
+        
+      }
+    }
+		  stage('Build Docker & tag'){
+            steps{
+                sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
+		sh 'docker tag projectdevops youssefbriouza/projectdevopsfront'
+            }
+        }
+		 stage('Docker login & Push'){
+            steps{
+		sh 'docker login -u youssefbriouza -p vagrantvagrant'
+                sh 'docker push youssefbriouza/projectdevopsfront'
+            }
+        }
+		stage('Start container') {
              steps {
                 sh 'docker-compose up -d '
       }
         }
-    */
   }
 }
   /*post {
