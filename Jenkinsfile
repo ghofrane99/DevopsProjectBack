@@ -10,7 +10,7 @@ pipeline {
            }
   
   }
-  stage ('MVN BUILD') {
+ /* stage ('MVN BUILD') {
       steps {
         sh 'mvn clean package'
         echo 'Build stage done'
@@ -53,7 +53,7 @@ pipeline {
 		sh 'docker login -u youssefbriouza -p vagrantvagrant'
                 sh 'docker push youssefbriouza/projectdevops'
             }
-        }
+        }*/
     stage('git checkout front') {
       steps {
         git branch : 'master',
@@ -69,7 +69,7 @@ pipeline {
         echo 'test stage done'
       }
     }
-	/*stage ('ng build') {
+	stage ('ng build') {
       steps {
         sh 'ng build'
         echo 'Build stage done'
@@ -97,7 +97,7 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }*/
+        }
   }
   }
   /*post {
