@@ -11,7 +11,7 @@ pipeline {
            }
   
   }
-  stage ('MVN BUILD') {
+ /* stage ('MVN BUILD') {
       steps {
         sh 'mvn clean package'
         echo 'Build stage done'
@@ -45,21 +45,56 @@ pipeline {
         
       }
     }
-    /*stage('Build Docker'){
+   stage('Build Docker & tag'){
             steps{
-                sh 'docker build -t oussemaaaa/cloudonomicsspring-app .'
+                sh 'docker build -f Dockerfile -t projectdevops .'
+		sh 'docker tag projectdevops youssefbriouza/projectdevops'
             }
         }
-		stage('Docker Login'){
+		 stage('Docker login & Push'){
             steps{
-			
-                sh 'docker login -u oussemaaaa -p benjou1998'
+		sh 'docker login -u youssefbriouza -p vagrantvagrant'
+                sh 'docker push youssefbriouza/projectdevops'
+            }
+        }*/
+    stage('git checkout front') {
+      steps {
+        git branch : 'master',
+        url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
+	      
+        echo 'checkout stage'
+	 sh'ls -la'
+	 sh'cat package.json'
+           }
+  }
+	 stage ('ng test') {
+      steps {
+        sh 'ng version'
+        echo 'test stage done'
+      }
+    }
+	stage ('ng build') {
+      steps {
+        sh 'ng build'
+        echo 'Build stage done'
+      }
+    }
+	stage ('Nexus DEPLOY') {
+       steps {
+        sh 'npm publish'
+        
+      }
+    }
+		 /* stage('Build Docker & tag front'){
+            steps{
+                sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
+		sh 'docker tag projectdevops youssefbriouza/projectdevopsfront'
             }
         }
-		 stage('Docker Push'){
+		 stage('Docker login & Push front'){
             steps{
-			
-                sh 'docker push oussemaaaa/cloudonomicsspring-app'
+		sh 'docker login -u youssefbriouza -p vagrantvagrant'
+                sh 'docker push youssefbriouza/projectdevopsfront'
             }
         }
 		stage('Start container') {
@@ -67,21 +102,15 @@ pipeline {
                 sh 'docker-compose up -d '
       }
         }*/
-    
-    
-    
-    
-    
-  }  
   }
- /* post {
+  }
+  /*post {
         always {
-
 	emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
 	
     }
- }*/
-
+ }
+*/
