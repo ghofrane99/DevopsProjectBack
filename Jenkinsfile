@@ -62,12 +62,12 @@ pipeline {
         echo 'checkout stage'
            }
   }
-	 stage ('ng test') {
+	/* stage ('ng test') {
       steps {
         sh 'ng test'
         echo 'test stage done'
       }
-    }
+    }*/
 	stage ('ng build') {
       steps {
         sh 'ng build'
