@@ -90,7 +90,7 @@
 	<distributionManagement>
     <repository>
         <id>deploymentRepo</id>
-        <url>http://172.10.1.140:8081/repository/ProjectDevOps/</url>
+        <url>http://192.168.100.120:8081/repository/ProjectDevOps/</url>
     </repository>
 </distributionManagement>
 
