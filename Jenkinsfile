@@ -80,7 +80,8 @@ pipeline {
     }
 	stage ('Nexus DEPLOY') {
        steps {
-        sh 'ng deploy http://172.10.0.140:8081/repository/ProjectDevopsfront/'
+	sh 'npm login --registry http://172.10.0.140:8081/repository/ProjectDevopsfront/'
+        sh 'npm publish --registry http://172.10.0.140:8081/repository/ProjectDevopsfront/'
         
       }
     }
