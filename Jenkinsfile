@@ -32,7 +32,7 @@ pipeline {
     
     stage ('STATIC TEST WITH SONAR') {
        steps { 
-                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.100.13:9000 -Dsonar.login=7b41f2d88b4f512107a628d74252f22af1f1769d'
+                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.100.13:9000-Dsonar.login=7b41f2d88b4f512107a628d74252f22af1f1769d'
       }
     }
   
@@ -54,7 +54,7 @@ pipeline {
                 sh 'docker push youssefbriouza/projectdevops'
             }
         }
-	 /* stages {
+	 stages {
     stage('git checkout front') {
       steps {
         git branch : 'master',
@@ -64,7 +64,7 @@ pipeline {
            }
   
   }
-	stage ('ng test') {
+	/* stage ('ng test') {
       steps {
         sh 'ng test'
         echo 'test stage done'
