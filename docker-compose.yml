@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   angular-app:
-    image: youssefbriouza/angularproject:latest
+    image: youssefbriouza/projectdevopsfront:latest
     ports:
       - 4200:4200
   mysqldb:
