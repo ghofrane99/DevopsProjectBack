@@ -80,7 +80,7 @@ pipeline {
     }
 	stage ('Nexus DEPLOY') {
        steps {
-        sh 'npm publish --access public --registry http://172.10.0.140:8081/repository/ProjectDevopsfront/'
+        sh 'curl -u admin:nexus -T /dist/* http://172.10.0.140:8081/repository/ProjectDevopsfront/'
         
       }
     }
