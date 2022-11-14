@@ -54,7 +54,7 @@ pipeline {
                 sh 'docker push youssefbriouza/projectdevops'
             }
         }
-	  stages {
+	 /* stages {
     stage('git checkout front') {
       steps {
         git branch : 'master',
@@ -98,7 +98,7 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }
+        }*/
   }
   }
   /*post {
