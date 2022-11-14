@@ -61,6 +61,7 @@ pipeline {
 	      
         echo 'checkout stage'
 	 sh'ls -la'
+	 sh'cat package.json'
            }
   }
 	 stage ('ng test') {
