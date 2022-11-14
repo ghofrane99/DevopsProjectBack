@@ -63,13 +63,13 @@ pipeline {
 	 sh'ls -la'
            }
   }
-	/* stage ('ng test') {
+	 stage ('ng test') {
       steps {
-        sh 'ng test'
+        sh 'ng --version'
         echo 'test stage done'
       }
-    }*/
-	stage ('ng build') {
+    }
+	/*stage ('ng build') {
       steps {
         sh 'ng build'
         echo 'Build stage done'
@@ -97,7 +97,7 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }
+        }*/
   }
   }
   /*post {
