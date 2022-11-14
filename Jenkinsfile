@@ -54,7 +54,6 @@ pipeline {
                 sh 'docker push youssefbriouza/projectdevops'
             }
         }
-	 stages {
     stage('git checkout front') {
       steps {
         git branch : 'master',
@@ -62,9 +61,8 @@ pipeline {
 	      
         echo 'checkout stage'
            }
-  
   }
-	/* stage ('ng test') {
+	 stage ('ng test') {
       steps {
         sh 'ng test'
         echo 'test stage done'
@@ -98,7 +96,7 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }*/
+        }
   }
   }
   /*post {
