@@ -80,7 +80,7 @@ pipeline {
     }
 	stage ('Nexus DEPLOY') {
        steps {
-        sh 'curl -u admin:nexus -T /dist/* http://172.10.0.140:8081/repository/ProjectDevopsfront/'
+        sh 'sudo curl -u admin:nexus -T /dist/* http://172.10.0.140:8081/repository/ProjectDevopsfront/'
         
       }
     }
