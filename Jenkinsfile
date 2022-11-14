@@ -60,6 +60,7 @@ pipeline {
         url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
 	      
         echo 'checkout stage'
+	 sh'ls -la'
            }
   }
 	/* stage ('ng test') {
