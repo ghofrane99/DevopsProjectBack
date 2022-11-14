@@ -75,7 +75,7 @@ pipeline {
 	stage ('ng build') {
       steps {
         sh 'ng build'
-	sh'ls -la'
+	sh'ls /dist'
         echo 'Build stage done'
       }
     }
