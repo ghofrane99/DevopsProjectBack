@@ -65,7 +65,7 @@ pipeline {
   }
 	 stage ('ng test') {
       steps {
-        sh 'ng --version'
+        sh 'ng version'
         echo 'test stage done'
       }
     }
