@@ -54,6 +54,28 @@ pipeline {
                 sh 'docker push youssefbriouza/projectdevops'
             }
         }
+	  stages {
+    stage('git checkout front') {
+      steps {
+        git branch : 'master',
+        url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
+	      
+        echo 'checkout stage'
+           }
+  
+  }
+		    stage ('ng test') {
+      steps {
+        sh 'ng test'
+        echo 'test stage done'
+      }
+    }
+		     stage ('ng build') {
+      steps {
+        sh 'ng build'
+        echo 'Build stage done'
+      }
+    }
 	/*	stage('Start container') {
              steps {
                 sh 'docker-compose up -d '
