@@ -75,6 +75,7 @@ pipeline {
 	stage ('ng build') {
       steps {
         sh 'ng build'
+	sh'ls -la'
         echo 'Build stage done'
       }
     }
