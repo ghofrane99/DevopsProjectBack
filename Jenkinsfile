@@ -80,13 +80,13 @@ pipeline {
         
       }
     }
-		  stage('Build Docker & tag'){
+		  stage('Build Docker & tag front'){
             steps{
                 sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
 		sh 'docker tag projectdevops youssefbriouza/projectdevopsfront'
             }
         }
-		 stage('Docker login & Push'){
+		 stage('Docker login & Push front'){
             steps{
 		sh 'docker login -u youssefbriouza -p vagrantvagrant'
                 sh 'docker push youssefbriouza/projectdevopsfront'
