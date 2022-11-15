@@ -10,7 +10,7 @@ pipeline {
            }
   
   }
- /* stage ('MVN BUILD') {
+  stage ('MVN BUILD') {
       steps {
         sh 'mvn clean package'
         echo 'Build stage done'
@@ -32,13 +32,13 @@ pipeline {
     
     stage ('STATIC TEST WITH SONAR') {
        steps { 
-                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.100.120:9000 -Dsonar.login=47536d40d88aa4ba3860a5661342baf702b645eb'
+                sh 'mvn sonar:sonar -Dsonar.projectKey=ProjectDevops -Dsonar.host.url=http://192.168.1.76/:9000 -Dsonar.login=47536d40d88aa4ba3860a5661342baf702b645eb'
       }
     }
   
    stage ('NEXUS DEPLOY') {
        steps {
-        sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:vagrant@192.168.100.120:8081/repository/ProjectDevops/'
+        sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:vagrant@192.168.1.76/:8081/repository/ProjectDevops/'
         
       }
     }
@@ -53,8 +53,8 @@ pipeline {
 		sh 'docker login -u youssefbriouza -p vagrantvagrant'
                 sh 'docker push youssefbriouza/projectdevops'
             }
-        }*/
-    stage('git checkout front') {
+        }
+   /* stage('git checkout front') {
       steps {
         git branch : 'master',
         url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
