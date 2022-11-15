@@ -42,27 +42,56 @@ pipeline {
                 sh 'mvn deploy -DaltDeploymentRepository=nexus::default::http://admin:admin123@172.10.0.140:8081/repository/ProjectDevOps/'
 	   }
    }
-    stage('Build Docker'){
+	  stage('Build Docker & tag'){
             steps{
-                sh 'docker build -t projetdevops .'
+                sh 'docker build -f Dockerfile -t projectdevops .'
+		sh 'docker tag projectdevops mariemb/projectdevops'
             }
         }
-		stage('Docker Login'){
+		 stage('Docker login & Push'){
             steps{
-			
-                sh 'docker login -u mariemb -p 181JFT1453'
+		sh 'docker login -u mariemb -p 181JFT1453'
+                sh 'docker push mariemb/projectdevops'
             }
         }
-	   stage('Docker ps'){
+   stage('git checkout front') {
+      steps {
+        git branch : 'master',
+        url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
+	      
+        echo 'checkout stage'
+	      sh'npm install --save @angular-devkit/build-angular'
+	
+           }
+  }
+	 stage ('ng test') {
+      steps {
+        sh 'ng version'
+        echo 'test stage done'
+      }
+    }
+	stage ('ng build') {
+      steps {
+        sh 'ng build'
+        echo 'Build stage done'
+      }
+    }
+	/*stage ('Nexus DEPLOY') {
+       steps {
+        sh 'npm publish'
+        
+      }
+    }
+		  stage('Build Docker & tag front'){
             steps{
-			
-                sh 'docker ps -a'
+                sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
+		sh 'docker tag projectdevops youssefbriouza/projectdevopsfront'
             }
         }
-	/*	 stage('Docker Push'){
+		 stage('Docker login & Push front'){
             steps{
-			
-                sh 'docker push projectdevops/projectdevops'
+		sh 'docker login -u youssefbriouza -p vagrantvagrant'
+                sh 'docker push youssefbriouza/projectdevopsfront'
             }
         }
 		stage('Start container') {
