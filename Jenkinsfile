@@ -11,7 +11,7 @@ pipeline {
            }
   
   }
- /* stage ('MVN BUILD') {
+ stage ('MVN BUILD') {
       steps {
         sh 'mvn clean package'
         echo 'Build stage done'
@@ -48,15 +48,15 @@ pipeline {
    stage('Build Docker & tag'){
             steps{
                 sh 'docker build -f Dockerfile -t projectdevops .'
-		sh 'docker tag projectdevops youssefbriouza/projectdevops'
+		sh 'docker tag projectdevops ghofranec/projectdevops'
             }
         }
 		 stage('Docker login & Push'){
             steps{
-		sh 'docker login -u youssefbriouza -p vagrantvagrant'
-                sh 'docker push youssefbriouza/projectdevops'
+		sh 'docker login -u ghofranec -p dockerdocker'
+                sh 'docker push ghofranec/projectdevops'
             }
-        }*/
+        }
     stage('git checkout front') {
       steps {
         git branch : 'master',
@@ -75,7 +75,6 @@ pipeline {
 	stage ('ng build') {
       steps {
         sh 'ng build'
-	sh 'ls */*/*'
         echo 'Build stage done'
       }
     }
