@@ -54,7 +54,7 @@ pipeline {
                 sh 'docker push youssefbriouza/projectdevops'
             }
         }
-   /* stage('git checkout front') {
+   stage('git checkout front') {
       steps {
         git branch : 'master',
         url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
@@ -76,7 +76,7 @@ pipeline {
         echo 'Build stage done'
       }
     }
-	stage ('Nexus DEPLOY') {
+	/*stage ('Nexus DEPLOY') {
        steps {
         sh 'npm publish'
         
@@ -98,7 +98,7 @@ pipeline {
              steps {
                 sh 'docker-compose up -d '
       }
-        }
+        }*/
   }
   }
   /*post {
