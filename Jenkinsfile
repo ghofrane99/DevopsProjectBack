@@ -60,7 +60,7 @@ pipeline {
         url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
 	      
         echo 'checkout stage'
-	      sh'npm install --save @angular-devkit/build-angular'
+	      /*sh'npm install --save @angular-devkit/build-angular'*/
 	
            }
   }
