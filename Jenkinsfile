@@ -93,12 +93,12 @@ pipeline {
 		sh 'docker login -u youssefbriouza -p vagrantvagrant'
                 sh 'docker push youssefbriouza/projectdevopsfront'
             }
-        }
+        }*/
 		stage('Start container') {
              steps {
-                sh 'docker-compose up -d '
+                sh 'docker-compose up -d'
       }
-        }*/
+        }
     
     
     
