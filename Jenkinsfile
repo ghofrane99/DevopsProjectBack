@@ -64,12 +64,12 @@ pipeline {
 	
            }
   }
-	 stage ('ng test') {
+	/* stage ('ng test') {
       steps {
         sh 'ng version'
         echo 'test stage done'
       }
-    }
+    }*/
 	stage ('ng build') {
       steps {
         sh 'ng build'
