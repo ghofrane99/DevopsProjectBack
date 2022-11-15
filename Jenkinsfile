@@ -81,7 +81,8 @@ pipeline {
     }
 	stage ('Nexus DEPLOY') {
        steps {
-        sh 'sudo curl -u admin:nexus -T /dist/* http://172.10.0.140:8081/repository/ProjectDevopsfront/'
+	       
+        sh 'npm --registry http://172.10.0.140:8081/repository/ProjectDevopsfront/ install'
         
       }
     }
