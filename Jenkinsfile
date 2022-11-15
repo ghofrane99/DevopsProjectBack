@@ -60,8 +60,8 @@ pipeline {
         url : 'https://github.com/ghofrane99/DevopsProjectFront.git';
 	      
         echo 'checkout stage'
-	 sh'ls -la'
-	 sh'cat package.json'
+	      sh'npm install --save @angular-devkit/build-angular'
+	
            }
   }
 	 stage ('ng test') {
