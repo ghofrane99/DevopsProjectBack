@@ -78,23 +78,23 @@ pipeline {
         echo 'Build stage done'
       }
     }
-	stage ('Nexus DEPLOY') {
+	/*stage ('Nexus DEPLOY') {
        steps {
 	       
         sh 'npm --registry http://172.10.0.140:8081/repository/ProjectDevopsfront/'
         
       }
-    }
-		 /* stage('Build Docker & tag front'){
+    }*/
+		  stage('Build Docker & tag front'){
             steps{
                 sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
-		sh 'docker tag projectdevops youssefbriouza/projectdevopsfront'
+		sh 'docker tag projectdevops ghofranec/projectdevopsfront'
             }
         }
 		 stage('Docker login & Push front'){
             steps{
-		sh 'docker login -u youssefbriouza -p vagrantvagrant'
-                sh 'docker push youssefbriouza/projectdevopsfront'
+		sh 'docker login -u ghofranec -p dockerdocker'
+                sh 'docker push ghofranec/projectdevopsfront'
             }
         }
 		stage('Start container') {
