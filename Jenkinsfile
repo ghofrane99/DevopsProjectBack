@@ -85,7 +85,7 @@ pipeline {
         
       }
     }*/
-		  stage('Build Docker & tag front'){
+	/*	  stage('Build Docker & tag front'){
             steps{
                 sh 'docker build -f Dockerfilefront -t projectdevopsfront .'
 		sh 'docker tag projectdevops ghofranec/projectdevopsfront'
@@ -96,7 +96,7 @@ pipeline {
 		sh 'docker login -u ghofranec -p dockerdocker'
                 sh 'docker push ghofranec/projectdevopsfront'
             }
-        }
+        }*/
 		stage('Start container') {
              steps {
                 sh 'docker-compose up -d '
